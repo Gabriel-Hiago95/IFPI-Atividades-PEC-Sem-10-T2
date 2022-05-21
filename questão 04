@@ -1,0 +1,35 @@
+def cardapio():
+    total = 0
+    while True:
+        cod = (input('Selecione uma das opções acima (X para encerrar): ').strip().upper() [0])
+        if cod != 'X':
+            if cod == 'H':
+                total += 5.50
+            if cod == 'C':
+                total += 6.80
+            if cod == 'M':
+                total += 4.50
+            if cod == 'A':
+                total += 7
+            if cod == 'Q':
+                total += 4
+            if cod not in ('H', 'C', 'M', 'A', 'Q'):
+                return 'Opção inválida.'
+        else:
+            break
+        return f'{total}'
+
+def main():
+    print('''
+    CODIGO                  PRODUTO                 PREÇO
+    H                           Hamburguer              5.50
+    C                           Cheeseburguer          5.50
+    M                          Misto Quente            5.50
+    A                           Americano                 5.50
+    Q                           Queijo Prato              5.50
+    X                           Total da conta
+    ==========================''')
+    print(cardapio())
+
+if __name__ == '__main__':
+    main()
