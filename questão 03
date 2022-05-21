@@ -1,27 +1,27 @@
-def mensagem():
-    while True:
-        opcao = int(input('Selecione uma das opções acima (0 para encerrar): ').strip())
-        if opcao != 0:
-            if opcao == 1:
-                return 'Olá. Como vai.'
-            if opcao == 2:
-                return 'Vamos estudar mais.'
-            if opcao == 3:
-                return 'Meus parabéns!'
-            if opcao not in (1, 2, 3):
-                return 'Opção inválida.'
+def opcoes():
+    opcao = 10
+    while opcao != 0:
+        opcao = int(input('Digite uma das opções acima (0 para encerrar): ').strip())
+
+        if opcao == 1:
+            print('Olá, como vai?')
+        elif opcao == 2:
+            print('Vamos estudar mais')
+        elif opcao == 3:
+            print('Meus parabéns')
+        elif opcao == 0:
+            print('Fim de serviço')
         else:
-            break
-        print('Fim de serviço.')
+            print('Opção invalida')
 
 def main():
-    print('''OPÇÕES:
-    1 - SAUDAÇÃO
-    2 - BRONCA
-    3 - FELICITAÇÃO
-    4 - FIM
-    ==========================''')
-    print(mensagem())
+     print('''OPÇÕES:
+     1 - SAUDAÇÃO
+     2 - BRONCA
+     3 - FELICITAÇÕES
+     0 - FIM''')
+
+     print(opcoes())
 
 if __name__ == '__main__':
     main()
