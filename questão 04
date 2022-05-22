@@ -1,23 +1,27 @@
 def cardapio():
-    total = 0
-    while True:
-        cod = (input('Selecione uma das opções acima (X para encerrar): ').strip().upper() [0])
-        if cod != 'X':
-            if cod == 'H':
-                total += 5.50
-            if cod == 'C':
-                total += 6.80
-            if cod == 'M':
-                total += 4.50
-            if cod == 'A':
-                total += 7
-            if cod == 'Q':
-                total += 4
-            if cod not in ('H', 'C', 'M', 'A', 'Q'):
-                return 'Opção inválida.'
-        else:
-            break
-        return f'{total}'
+    H = float(5.50)
+    C = float(6.80)
+    M = float(4.50)
+    A = float(7.00)
+    Q = float(4.00)
+    soma_itens = 0
+    cod = 'SDS'
+    while cod != 'X':
+        cod = str(input('Informe o código do item: ')).upper()[0]
+        if cod not in ['H','C','A','Q','M','X']:
+            print('opcao invalida')
+        if cod == 'H':
+            soma_itens += H
+        if cod == 'C':
+            soma_itens += C
+        if cod == 'M':
+            soma_itens += M
+        if cod == 'A':
+            soma_itens += A
+        if cod == 'Q':
+            soma_itens += Q
+        if cod == 'X':
+            print(f'Total da compra: R$ {soma_itens:.2f}')
 
 def main():
     print('''
@@ -29,7 +33,7 @@ def main():
     Q                           Queijo Prato              5.50
     X                           Total da conta
     ==========================''')
-    print(cardapio())
+    cardapio()
 
 if __name__ == '__main__':
     main()
